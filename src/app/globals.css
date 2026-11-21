@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 173 80% 26%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 173 80% 26%;
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 172 66% 45%;
+    --primary-foreground: 240 10% 3.9%;
+    --secondary: 240 3.7% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 14.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 18%;
+    --ring: 172 66% 45%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground;
+  }
+}
+
+/* Legacy slate utility harmonization for dark mode */
+.dark .bg-white {
+  background-color: hsl(var(--card)) !important;
+}
+
+.dark .bg-white\/95 {
+  background-color: hsl(var(--card) / 0.95) !important;
+}
+
+.dark .bg-slate-50,
+.dark .bg-slate-50\/60,
+.dark .bg-slate-50\/70,
+.dark .bg-slate-50\/80 {
+  background-color: hsl(var(--muted) / 0.5) !important;
+}
+
+.dark .bg-slate-100 {
+  background-color: hsl(var(--secondary)) !important;
+}
+
+.dark .border-slate-200,
+.dark .border-slate-200\/80,
+.dark .border-slate-300,
+.dark .border-slate-100 {
+  border-color: hsl(var(--border)) !important;
+}
+
+.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]),
+.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: hsl(var(--border)) !important;
+}
+
+.dark .text-slate-900,
+.dark .text-slate-950 {
+  color: hsl(var(--foreground)) !important;
+}
+
+.dark .text-slate-800,
+.dark .text-slate-700 {
+  color: hsl(240 5% 84%) !important;
+}
+
+.dark .text-slate-600,
+.dark .text-slate-500 {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+.dark .text-teal-700,
+.dark .text-teal-800,
+.dark .text-teal-900 {
+  color: hsl(var(--primary)) !important;
+}
+
+.dark .bg-amber-50,
+.dark .bg-amber-50\/60,
+.dark .bg-amber-50\/70,
+.dark .bg-amber-50\/80 {
+  background-color: rgba(120, 53, 15, 0.25) !important;
+}
+
+.dark .border-amber-200,
+.dark .border-amber-300,
+.dark .border-amber-400 {
+  border-color: rgba(245, 158, 11, 0.4) !important;
+}
+
+.dark .text-amber-800,
+.dark .text-amber-900,
+.dark .text-amber-950 {
+  color: rgb(253 230 138) !important;
+}
+
+.dark .bg-teal-50,
+.dark .bg-teal-50\/30,
+.dark .bg-teal-50\/40,
+.dark .bg-teal-50\/50 {
+  background-color: rgba(19, 78, 74, 0.3) !important;
+}
+
+.dark .bg-rose-50,
+.dark .bg-rose-50\/70 {
+  background-color: rgba(136, 19, 55, 0.28) !important;
+}
+
+.dark .text-rose-700,
+.dark .text-rose-800,
+.dark .text-rose-900 {
+  color: rgb(253 164 175) !important;
+}
+
+.dark input:not([type="checkbox"]),
+.dark select,
+.dark textarea {
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+  border-color: hsl(var(--input)) !important;
+}
